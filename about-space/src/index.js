@@ -21,7 +21,7 @@ export default class MyPlugin extends BasePlugin {
         // Create a button in the toolbar
         this.menus.register({
             icon: this.paths.absolute('button-icon.png'),
-            text: 'Plugin',
+            text: 'About Space',
             action: () => this.onButtonPress()
         })
 
@@ -31,7 +31,14 @@ export default class MyPlugin extends BasePlugin {
     onButtonPress() {
 
         // Show alert
-        this.menus.alert(`Hello from ${this.constructor.name} version ${require('../package.json').version}!`, 'Hello world!', 'info')
+        this.menus.displayPopup({
+            title: 'About Space',
+            panel: {
+                iframeURL: this.paths.absolute('popup.html'),
+                width: 1200,
+                height: 800
+            }
+        })
 
     }
 
