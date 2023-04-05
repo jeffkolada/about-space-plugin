@@ -1,0 +1,15 @@
+{
+  "id": "aboutspace",
+  "name": "About Space",
+  "version": "1.0.0",
+  "beta": true,
+  "personalPlugin": true,
+  "description": "Tell visitors a little more about the space, the space creator, and any creative commons assets that require attribution.",
+  "longDescription": "Tell visitors a little more about the spac",
+  "configuration": "Coming Soon",
+  "category": "Styling",
+  "businessId": "11X67r43DL",
+  "price": 0,
+  "releaseNotes": "none",
+  "entrypoint": ""
+}
