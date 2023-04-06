@@ -19,14 +19,14 @@ export default class MyPlugin extends BasePlugin {
     /** Called on load */
     onLoad() {
 
-        // Create a button in the toolbar
+        // Create a Visitor button in the toolbar
         this.menus.register({
             icon: this.paths.absolute('button-icon.png'),
             text: 'About Space',
             action: () => this.onButtonPress()
         })
 
-
+        // Create an Admin button in the File Menu
     this.menus.register({
         id: 'about-space-config',
         section: 'file-menu',
@@ -54,6 +54,7 @@ export default class MyPlugin extends BasePlugin {
 
     }
 
+    /** called when the admin presses the settings button */
     onAdminButtonPress() {
 
         // Show Popup HTML

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Editable List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Editable List</h1>
+  <form id="form">
+    <label for="title">Space Title:</label>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="description">Space Description:</label>
+    <textarea id="description" name="description" required></textarea><br>
+
+    <label for="image">Image URL:</label>
+    <input type="url" id="image" name="image" required><br>
+
+    <label for="url">URL:</label>
+    <input type="url" id="url" name="url" required><br>
+
+    <input type="button" value="Add" onclick="addListItem()">
+  </form>
+  <div id="list-container">
+    <h2>List Items</h2>
+    <ul id="list">
+      <li>
+        <img src="https://via.placeholder.com/150" alt="Image">
+        <div class="content">
+          <h2>Title</h2>
+          <p>Description</p>
+        </div>
+        <a href="#">Link</a>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/150" alt="Image">
+        <div class="content">
+          <h2>Title</h2>
+          <p>Description</p>
+        </div>
+        <a href="#">Link</a>
+      </li>
+    </ul>
+    <button id="toggle-view" onclick="toggleView()">Toggle View</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
