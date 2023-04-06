@@ -7,7 +7,7 @@ import { BasePlugin, BaseComponent } from 'vatom-spaces-plugins'
  * https://developer.vatom.com/plugins/plugins/
  *
  * @license MIT
- * @author Vatom Inc.
+ * @author JK.
  */
 export default class MyPlugin extends BasePlugin {
 
@@ -31,27 +31,42 @@ export default class MyPlugin extends BasePlugin {
         id: 'about-space-config',
         section: 'file-menu',
         title: 'About Space Edit',
-        panel: {
-            fields: [
-                { type: 'section', name: 'About Space' },
-                { type: 'text', id: 'about-title', name: 'Title', help: 'Title of your space' },
-                { type: 'textarea', id: 'about-description', name: 'Description', help: 'A short description about your space'},
-                { type: 'text', id: 'text', name: 'Text', help: 'Text to display in the message.' }
-            ]}
+        text: 'About Space Edit',
+        icon: this.paths.absolute('button-icon.png'),
+        action: () => this.onAdminButtonPress()
         })
     }
+
 
     /** Called when the user presses the action button */
     onButtonPress() {
 
-        // Show alert
+        // Show Popup HTML
         this.menus.displayPopup({
             title: 'About Space',
+            id: 'popup',
             panel: {
                 iframeURL: this.paths.absolute('./popup.html'),
                 width: 1200,
                 height: 800
             }
+        })
+
+    }
+
+    onAdminButtonPress() {
+
+        // Show Popup HTML
+        this.menus.displayPopup({
+            title: 'About Space',
+            id: 'about-admin-panel',
+            panel: {
+                fields: [
+                    { type: 'section', name: 'About Space' },
+                    { type: 'text', id: 'about-title', name: 'Title', help: 'Title of your space' },
+                    { type: 'textarea', id: 'about-description', name: 'Description', help: 'A short description about your space'},
+                    { type: 'text', id: 'text', name: 'Text', help: 'Text to display in the message.' }
+                ]}
         })
 
     }
