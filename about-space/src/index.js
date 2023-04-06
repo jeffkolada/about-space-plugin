@@ -12,8 +12,9 @@ import { BasePlugin, BaseComponent } from 'vatom-spaces-plugins'
 export default class MyPlugin extends BasePlugin {
 
     /** Plugin info */
-    static id = "vatom-template-plugin"
-    static name = "Vatom Template Plugin"
+    static id = "aboutspace"
+    static name = "About Space Plugin"
+    static description = "Info and Creative Commons Attribution"
 
     /** Called on load */
     onLoad() {
@@ -25,9 +26,9 @@ export default class MyPlugin extends BasePlugin {
             action: () => this.onButtonPress()
         })
 
-    }
+
     this.menus.register({
-        id: 'vatominc-popup-message-config',
+        id: 'about-space-config',
         section: 'plugin-settings',
         panel: {
             fields: [
@@ -37,7 +38,7 @@ export default class MyPlugin extends BasePlugin {
                 { type: 'text', id: 'text', name: 'Text', help: 'Text to display in the message.' }
             ]}
         })
-
+    }
 
     /** Called when the user presses the action button */
     onButtonPress() {
