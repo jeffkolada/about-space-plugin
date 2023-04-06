@@ -29,7 +29,8 @@ export default class MyPlugin extends BasePlugin {
 
     this.menus.register({
         id: 'about-space-config',
-        section: 'plugin-settings',
+        section: 'file-menu',
+        title: 'About Space Edit',
         panel: {
             fields: [
                 { type: 'section', name: 'About Space' },
